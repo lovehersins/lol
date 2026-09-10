@@ -1,0 +1,43 @@
+{
+  "name": "app-starter",
+  "version": "0.1.0",
+  "description": "Electron starter app with a pluggable API config, ready for an .exe build.",
+  "main": "src/main.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win",
+    "dist:all": "electron-builder -mwl"
+  },
+  "devDependencies": {
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "build": {
+    "appId": "com.local.appstarter",
+    "productName": "App Starter",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

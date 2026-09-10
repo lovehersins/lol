@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';" />
+  <title>App Starter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="rail-head">
+        <span class="mark">＋</span>
+        <span class="rail-title">App Starter</span>
+      </div>
+
+      <form id="config-form" class="config">
+        <label class="field">
+          <span>Base URL</span>
+          <input id="baseUrl" type="text" placeholder="https://api.example.com" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>Endpoint</span>
+          <input id="endpoint" type="text" placeholder="/v1/generate" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>API key</span>
+          <input id="apiKey" type="password" placeholder="paste key when you get it" autocomplete="off" />
+        </label>
+        <button type="submit" class="save-btn">Save settings</button>
+        <p id="save-status" class="save-status" aria-live="polite"></p>
+      </form>
+
+      <div class="rail-foot">
+        <p>Settings save to your local user data folder, never to this repo.</p>
+      </div>
+    </aside>
+
+    <main class="console">
+      <div class="console-head">
+        <h1>Console</h1>
+        <span id="status-pill" class="pill pill-idle">not connected</span>
+      </div>
+
+      <div id="log" class="log">
+        <div class="log-empty">Send something below once your API key is in Settings. Responses show up here.</div>
+      </div>
+
+      <form id="prompt-form" class="composer">
+        <textarea id="prompt" placeholder="Type a prompt or request…" rows="1"></textarea>
+        <button type="submit" id="send-btn">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
