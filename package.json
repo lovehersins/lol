@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win",
-    "dist:all": "electron-builder -mwl"
+    "dist": "electron-builder --win --publish=never",
+    "dist:all": "electron-builder -mwl --publish=never"
   },
   "devDependencies": {
     "electron": "^31.3.1",
@@ -21,13 +21,13 @@
   "build": {
     "appId": "com.local.appstarter",
     "productName": "App Starter",
+    "publish": null,
     "files": [
       "src/**/*",
       "package.json"
     ],
     "win": {
-      "target": "nsis",
-      "icon": "src/assets/icon.ico"
+      "target": "nsis"
     },
     "nsis": {
       "oneClick": false,
