@@ -1,0 +1,20 @@
+name = "app-starter-auth"
+main = "src/worker.js"
+compatibility_date = "2024-09-23"
+
+# Create this once with:
+#   npx wrangler kv namespace create AUTH_KV
+# then paste the returned "id" below.
+[[kv_namespaces]]
+binding = "AUTH_KV"
+id = "5444b5276a9f42a99fb9de45b88225af"
+
+# Non-secret config. This MUST exactly match one of the redirect URIs
+# registered on the Discord Developer Portal for your application, and
+# must point at this worker's own deployed URL (not the desktop app).
+[vars]
+DISCORD_REDIRECT_URI = "https://app-starter-auth.testingappauth.workers.dev/auth/discord/callback"
+# Secrets (never put these in this file or in git):
+#   npx wrangler secret put DISCORD_CLIENT_ID
+#   npx wrangler secret put DISCORD_CLIENT_SECRET
+#   npx wrangler secret put SESSION_JWT_SECRET

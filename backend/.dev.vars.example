@@ -1,0 +1,7 @@
+# Copy to backend/.dev.vars for local `wrangler dev` only. Never commit the
+# real file (it's git-ignored). In production these are set with
+# `wrangler secret put <NAME>`, not in a file.
+
+DISCORD_CLIENT_ID=
+DISCORD_CLIENT_SECRET=
+SESSION_JWT_SECRET=use-a-long-random-string-here

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' https://cdn.discordapp.com;" />
+  <title>App Starter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="rail-head">
+        <span class="mark">＋</span>
+        <span class="rail-title">App Starter</span>
+      </div>
+
+      <div class="config">
+        <div id="signed-out-view">
+          <p class="auth-copy">Sign in with Discord to use the app.</p>
+          <button id="login-btn" type="button" class="save-btn">Sign in with Discord</button>
+          <p id="login-status" class="save-status" aria-live="polite"></p>
+        </div>
+
+        <div id="signed-in-view" class="hidden">
+          <div class="profile">
+            <img id="avatar" class="avatar" alt="" />
+            <div>
+              <div id="username" class="username"></div>
+              <div class="user-id-label">Discord</div>
+            </div>
+          </div>
+          <button id="logout-btn" type="button" class="save-btn secondary">Sign out</button>
+        </div>
+      </div>
+
+      <div class="rail-foot">
+        <p>Discord is the identity provider. No password is ever seen by this app, and no session token is stored unencrypted.</p>
+      </div>
+    </aside>
+
+    <main class="console">
+      <div class="console-head">
+        <h1>Console</h1>
+        <span id="status-pill" class="pill pill-idle">not signed in</span>
+      </div>
+
+      <div id="log" class="log">
+        <div class="log-empty">Sign in with Discord, then send a request to see an authenticated call to the backend.</div>
+      </div>
+
+      <form id="prompt-form" class="composer">
+        <textarea id="prompt" placeholder="Type anything and press Send to call the authenticated /me endpoint…" rows="1"></textarea>
+        <button type="submit" id="send-btn">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

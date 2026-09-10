@@ -1,0 +1,15 @@
+{
+  "name": "app-starter-auth-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "secret:discord-client-id": "wrangler secret put DISCORD_CLIENT_ID",
+    "secret:discord-client-secret": "wrangler secret put DISCORD_CLIENT_SECRET",
+    "secret:session-jwt-secret": "wrangler secret put SESSION_JWT_SECRET"
+  },
+  "devDependencies": {
+    "wrangler": "^3.78.0"
+  }
+}
